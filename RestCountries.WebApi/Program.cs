@@ -8,6 +8,11 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddHttpClient("RestCountriesHttpClient", client =>
+{
+    client.BaseAddress = new Uri("https://restcountries.com/v3.1/");
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
