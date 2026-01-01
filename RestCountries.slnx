@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="RestCountries.Core/RestCountries.Core.csproj" />
   <Project Path="RestCountries.Data/RestCountries.Data.csproj" />
   <Project Path="RestCountries.WebApi/RestCountries.WebApi.csproj" />
 </Solution>
