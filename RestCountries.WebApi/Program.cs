@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using RestCountries.Core.Services;
 using RestCountries.Data;
+using RestCountries.Data.Repositories;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CountriesDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IImportCountriesRepository, ImportCountriesRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../RestCountries.Core/RestCountries.Core.csproj" />
     <ProjectReference Include="..\RestCountries.Data\RestCountries.Data.csproj" />
   </ItemGroup>
 

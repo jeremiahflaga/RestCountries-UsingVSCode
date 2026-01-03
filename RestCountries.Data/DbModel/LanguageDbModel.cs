@@ -1,4 +1,6 @@
-﻿namespace RestCountries.Data;
+﻿using RestCountries.Core.Entities;
+
+namespace RestCountries.Data;
 
 internal class LanguageDbModel
 {
@@ -7,4 +9,18 @@ internal class LanguageDbModel
     public string Name { get; set; }
 
     public ICollection<CountryLanguageDbModel>? CountryLanguages { get; set; }
+
+    internal Language ToLanguageEntity()
+    {
+        return new Language(Code, Name);
+    }
+
+    internal static LanguageDbModel FromLanguageEntity(Language language)
+    {
+        return new LanguageDbModel
+        {
+            Code = language.Code,
+            Name = language.Name
+        };
+    }
 }
